@@ -1,5 +1,6 @@
 const fs = require("fs");
 const file = "./productos.json";
+const express = require("express");
 
 
 class ProductManager {
@@ -116,7 +117,7 @@ class ProductManager {
 }
 
 const manager = new ProductManager("./productos.json");
-
+/* 
 const product1 = {
   code: 1,
   title: "Porta Vela",
@@ -165,3 +166,4 @@ const product3 = {
 
 
 manager.addProduct(product3);
+ */

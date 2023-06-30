@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "code": 1,
+    "title": "Porta Vela",
+    "description": "Vela en copa a juego para decoración",
+    "price": 3450.4,
+    "thumbnail": "../img/Porta-vela.jpeg",
+    "stock": 12
+  }
+]
