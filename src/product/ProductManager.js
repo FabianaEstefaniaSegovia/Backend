@@ -1,5 +1,5 @@
 const fs = require("fs");
-const file = "./productos.json";
+const file = "./products.json";
 const express = require("express");
 
 
@@ -116,7 +116,10 @@ class ProductManager {
 
 }
 
-const manager = new ProductManager("./productos.json");
+const manager = new ProductManager("./products.json");
+
+module.exports = ProductManager;
+
 /* 
 const product1 = {
   code: 1,
