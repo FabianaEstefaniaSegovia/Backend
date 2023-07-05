@@ -2,7 +2,7 @@ const express = require("express");
 const ProductManager = require("./product/ProductManager")
 const app = express();
 app.use(express.urlencoded({extended: true}))
-const manager = new ProductManager("./productos.json");
+const manager = new ProductManager("./src/product/products.json");
 
 app.get("/", (req, res) => {
     const template = `<!DOCTYPE html>
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
     return res.send(template);
 })
 
-app.get("/products", async (req, res) => {
+app.get('/products', async (req, res) => {
     const products = await manager.getProduct();
     const limit = req.query.limit;
 
@@ -31,12 +31,12 @@ app.get("/products", async (req, res) => {
 
     const prodLimit = products.slice(0, limit)
     console.log(prodLimit);
-    return res.send(`Limite de productos en ${prodLimit}`);
+    return res.send(prodLimit);
     }
 })
 
 app.get("/products/:id", async (req, res) => {
-    const id = req.params.id;
+    const id = Number(req.params.id);
     const prod = await manager.getProductbyId(id);
     if (!prod){
         return res 

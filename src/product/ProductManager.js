@@ -16,6 +16,9 @@ class ProductManager {
       if(!data) {
         throw new Error("No hay productos que mostrar");
       }
+      console.log(data);
+      const json = JSON.parse(data);
+      return json;
     } catch (error){
       console.log(error);
     }
